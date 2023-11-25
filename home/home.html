@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/style.scss">
+    <script type="module" src="./js/script.js"></script>
+    <title>HOME</title>
+</head>
+<body>
+    <!-- Container for frame lines -->
+    <div id="Frame" class="frame">
+        <div class="frame_line frame_line-left"></div>
+        <div class="frame_line frame_line-right"></div>
+        <div class="frame_line frame_line-top"></div>
+        <div class="frame_line frame_line-bottom"></div>
+
+        <!-- Content inside the frame -->
+        <div class="frame_content">
+            <img src="./curse.png" alt="Logo" class="logo">
+            <h1>Evan Dayton</h1>
+            <p>.</p>
+            
+            <!-- Four Links -->
+            <nav>
+                <ul>
+                    <li><a href="../my story/mystory1.html">My Story</a></li>
+                    <li><a href="https://github.com/EvanDayton">github</a></li>
+                    <li><a href="../index.html">Landing Page</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Photography</a>
+                        <div class="submenu">
+                            <a href="/home/photo gallery/photogallery.html">Photo Gallery</a>
+                            <a href="/home/photoshop/photoshop.html">Photoshop</a>
+                        </div>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Programming</a>  
+                        <div class="submenu">
+                            <a href="https://melodiq.me">MelodiQ</a>
+                            <a href="https://evandayton.github.io/TextToMorseCode/">Morse Code Converter</a>
+                        </div>                  
+                </ul>
+            </nav>   
+
+            <!-- Text in the bottom right -->
+            <div class="bottom-right-text">        
+                Born in 2001 in Spokane, Washington, 
+                and grew up in Gig Harbor, Washington. 
+                Currently, I am a senior at Colorado Christian University.
+                Exploring the world of web design, 
+                I believe in creating diverse and inspiring digital experiences. 
+                My mission is to showcase the endless possibilities, 
+                and actively experiment with new ideas and thoughts.</div>           
+        </div>
+    </div>
+
+    <!-- Main content container -->
+    <div class="grain">
+        <div id="main">
+            <svg>
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="name"/>
+                        <feColorMatrix in="name" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -30" result="b"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>

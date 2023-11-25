@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh; /* Use viewport height to ensure full height */
+}
+
+.logo {
+    z-index: 10;
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.scene-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .logo {
+        z-index: 10;
+        width: 50px; /* Adjust as needed */
+        height: 50px; /* Adjust as needed */
+        margin-right: 10px; /* Adjust as needed */
+        position: absolute;
+        display: block;
+        left: 30px;
+        top: 30px;
+      }
+}

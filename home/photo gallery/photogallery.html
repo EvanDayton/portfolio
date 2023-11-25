@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/style.scss">
+    <script type="module" src="../js/script.js"></script>
+    <title>PHOTO GALLERY</title>
+</head>
+<body>
+    <!-- Container for frame lines -->
+    <div id="Frame" class="frame">
+        <div class="frame_line frame_line-left"></div>
+        <div class="frame_line frame_line-right"></div>
+        <!-- Content inside the frame -->
+        <div class="frame_content">
+            <a href="../home.html">
+                <img src="../curse.png" alt="Logo" class="logo">
+              </a> 
+        </div>
+    </div>
+            <!-- Photo Gallery Section -->
+            <section class="photo-gallery" id="photoGallery">
+            </section>
+
+            <script type="module">
+                // JavaScript to generate photo items
+                const photoGallery = document.getElementById('photoGallery');
+        
+                // Create an array with photo filenames from "photo1.jpg" to "photo32.jpg"
+                const photoFilenames = Array.from({ length: 32 }, (_, i) => `./gallery/photo${i + 1}.jpg`);
+        
+                // Shuffle the array to randomize the order
+                shuffleArray(photoFilenames);
+        
+                // Iterate through the shuffled array to create photo elements
+                photoFilenames.forEach((filename, index) => {
+                    const photoItem = document.createElement('div');
+                    photoItem.classList.add('photo-item');
+        
+                    const img = document.createElement('img');
+                    img.src = filename;
+                    img.alt = `Photo ${index + 1}`;
+        
+                    photoItem.appendChild(img);
+                    photoGallery.appendChild(photoItem);
+                });
+        
+                // Function to shuffle an array using the Fisher-Yates algorithm
+                function shuffleArray(array) {
+                    for (let i = array.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [array[i], array[j]] = [array[j], array[i]];
+                    }
+                }
+            </script>
+    <!-- Main content container -->
+    <div class="grain">
+        <div id="main">
+            <svg>
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="name"/>
+                        <feColorMatrix in="name" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -30" result="b"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>

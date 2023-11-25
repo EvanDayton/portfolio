@@ -1,0 +1,68 @@
+/* Your existing styles */
+
+.myStoryContainer {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+p {
+    position: absolute;
+    color: black;
+    z-index: 5;
+    margin-right: 650px;
+    margin-left: 100px;
+    margin-top: 20%;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh; /* Use viewport height to ensure full height */
+}
+
+.logo {
+    z-index: 10;
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.scene-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+/* Add the following styles for the timeline at the bottom of the webpage */
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+}
+
+.timeline-item {
+    width: 20px;
+    height: 20px;
+    background-color: #D8D8D8;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.timeline-item.active {
+    background-color: #4CAF50; /* Change this color for the active circle */
+}

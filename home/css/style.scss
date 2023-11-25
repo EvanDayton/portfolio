@@ -1,0 +1,117 @@
+* {
+	margin: 0;
+    padding: 0;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.grain {
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url("https://www.researchgate.net/profile/Hans_Knutsson/publication/2337120/figure/fig2/AS:654786726739971@1533124729217/Random-noise-stereo-pair-containing-2-d-disparities.png");
+		background-color: transparent;
+		//mix-blend-mode: overlay;
+		opacity: 0.1;
+		pointer-events: none;
+	}
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: #bb3030;
+	background-color: rgb(0, 0, 0);
+}
+#main {
+	width: 150vw;
+	height: 100vh;
+	background-color: transparent;
+	filter: url(#goo);
+	transform: scale(1.1);
+}
+.dot {
+	position:fixed;
+	border-radius: 50%;
+	transition: all 0.8s linear;
+	z-index: 1;
+	&:hover,
+	&:active {
+		background-color: #000000 !important;
+		z-index: 999;
+	}
+	&:nth-child(1n) {
+		background-color: rgb(240, 231, 207);
+	}
+	&:nth-child(3n) {
+		background-color: rgb(0, 0, 0);
+	}
+	&:nth-child(4n) {
+		background-color: rgb(244, 223, 200);
+	}
+	&:nth-child(5n) {
+		background-color: rgb(110, 93, 75);
+	}
+	&:nth-child(6n) {
+		background-color: rgb(250, 246, 240);
+	}
+}
+
+
+.frame {
+	position: fixed;
+	z-index: 10;
+	left: var(--pad);
+	right: var(--pad);
+	top: var(--pad);
+	bottom: var(--pad);
+	mix-blend-mode: difference;
+  }
+  
+.frame_line-left {
+	z-index: 10;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+}
+
+.frame_line {
+	position: absolute;
+	background-color: #fff;
+	opacity: 0.5;
+  }
+  
+  .frame_line-left {
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+  }
+  
+  .frame_line-right {
+	right: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+  }
+  
+  .frame_line-top {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1px;
+  }
+  
+  .frame_line-bottom {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+  }
+  
+:root {
+	--pad: max(20px, 4vmin);
+  }

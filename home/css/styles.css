@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #1a1a1a;
+  overflow: hidden !important;
+}
+a,
+a:active {
+  background-color: transparent;
+  color: white;
+  font-weight: normal;
+  -webkit-transition: color 0.5s, background-color 0.5s; /* Safari 3.1 to 6.0 */
+  transition: color 0.5s, background-color 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+}
+
+canvas {
+  display: block;
+}
+
+#main {
+  background: black;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#container,
+#content {
+  background: black;
+  position: relative;
+  color: white;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#content {
+  border: solid;
+  border-width: 1px 0 1px 0;
+  border-color: #d1d1d1;
+  height: auto;
+  display: flex;
+}
+
+#title {
+  padding: 10px 0 10px 0;
+  width: 30%;
+  font-size: 42px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -0.75px;
+  font-kerning: auto;
+}
+
+#header {
+  text-align: right;
+  width: 70%;
+  font-family: 'Inconsolata', monospace;
+  letter-spacing: 1.15px;
+  padding: 5px 0 10px 10px;
+  border: solid;
+  border-width: 0 0 0 1px;
+  border-color: #d1d1d1;
+}
+
+#date {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+#header h1 {
+  margin: 5px 0;
+  font-size: 2.0em;
+  text-transform: uppercase;
+}
+
+#description {
+  margin: 10px 0;
+}
+
+#baseline {
+  width: 100%;
+  font-size: 0.85em;
+  line-height: 1.75em;
+}
+
+#author {
+  width: 100%;
+  font-size: 0.75em;
+  line-height: 1.75em;
+  padding: 10px 0 0 0;
+}
+
+.frame {
+  position: fixed;
+  z-index: 13;
+  left: var(--pad);
+  right: var(--pad);
+  top: var(--pad);
+  bottom: var(--pad);
+  mix-blend-mode: multiply;
+}
+
+
+.frame_line-left {
+  z-index: 13;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.frame_line {
+z-index: 13;
+position: absolute;
+background-color: #fff;
+opacity: 0.5;
+}
+
+.frame_line-left {
+z-index: 13;
+left: 0;
+top: 0;
+width: 1px;
+height: 100%;
+}
+
+.frame_line-right {
+z-index: 13;
+right: 0;
+top: 0;
+width: 1px;
+height: 100%;
+}
+
+.frame_line-top {
+z-index: 13;
+left: 0;
+top: 0;
+width: 100%;
+height: 1px;
+}
+
+.frame_line-bottom {
+z-index: 13;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 1px;
+}
+
+.frame_content {
+  color: #fff;
+}
+
+h1 {
+  font-family: 'Times New Roman Condensed Bold';  
+  font-weight: 300;
+  margin-top: 15px;
+  margin-left: 65px;
+  font-size: 80px; /* Adjust as needed */
+  margin-bottom: -50px;  
+}
+
+p {
+  font-size: 100px;
+  margin-left: 90px;
+}
+
+nav ul {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+nav ul li {
+  position: relative;
+  z-index: 10;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em; /* Adjust as needed */
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 20px;
+  z-index: 10;
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+  margin-right: 10px; /* Adjust as needed */
+  filter: invert(1); /* Invert the color */
+}
+
+.bottom-right-text {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  max-width: 200px; /* Adjust the max-width as needed */
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+/* Add this to your existing styles or create a new stylesheet */
+nav ul li {
+  position: relative;
+}
+
+/* Style for the submenu */
+nav ul li .submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: -1150px; /* Adjust this value to position the submenu to the left */
+  background-color: #fff; /* Adjust the background color as needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a box shadow */
+  transition-duration: 1s; /* Adjust the transition time for the first link */
+}
+
+/* Style for the submenu links */
+nav ul li .submenu a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333; /* Adjust the text color as needed */
+  transition: background-color 1s;
+}
+
+/* Hover effect for the submenu links */
+nav ul li .submenu a:hover {
+  background-color: #f0f0f0; /* Adjust the hover background color */
+}
+
+/* Show the submenu when the parent is hovered */
+nav ul li:hover .submenu {
+  display: inline-block;
+}
+
+/* Fade in the submenu links with different transition times */
+nav ul li:hover .submenu a:nth-child(1) {
+  transition-duration: 1s; /* Adjust the transition time for the first link */
+}
+
+nav ul li:hover .submenu a:nth-child(2) {
+  transition-duration: 1.2s; /* Adjust the transition time for the second link */
+}
+
+nav ul li:hover .submenu a:nth-child(3) {
+  transition-duration: 1.5s; /* Adjust the transition time for the third link */
+}
+
+/* Add this to your existing styles or create a new stylesheet */
+
+.description {
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.photo-gallery-container {
+  height: 1000px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Add this to your existing styles or create a new stylesheet */
+
+.photo-gallery {
+  top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  z-index: 110;
+  padding: 75px; /* Add padding as needed */
+}
+
+.photo-item {
+  margin: 10px;
+  width: calc(33.33% - 20px); /* Limit to three photos per row */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  position: relative;
+  z-index: 11;
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: none !important;
+  filter: none !important;
+  position: relative;
+  z-index: 11;
+  max-width: 60%; /* Adjust the maximum width of the image */
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .bottom-right-text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      bottom: 40px;
+      right: 50px;
+      max-width: 311px;
+      padding-bottom: 0px;
+      border-radius: 5px;
+      font-size: 14.5px;
+      line-height: 28px;
+      margin-top: 50px;
+      margin-bottom: 12px !important;
+      position: static !important;
+      margin-left: 30px;
+      text-align: center;
+  }
+  p {
+    font-size: 100px;
+    margin-left: 40px !important;
+  }
+
+  nav ul li {
+    position: relative;
+    z-index: 10;
+    margin-top: 20px;
+    margin-left: 50px !important;
+    margin-bottom: 10px; /* Adjust as needed */
+  }
+
+  body{
+    margin-bottom: 30px !important;
+  }
+
+  h1{
+    margin-left: 30px !important;
+  }
+  
+}
+
+
+
+
