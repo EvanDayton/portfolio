@@ -82,7 +82,7 @@ function animate() {
   // Check if the animation should continue
   if (orbPressed && isHyperspaceAnimationComplete) {
     // The orb is pressed, and hyperspace animation is complete, redirect to home.html
-    window.location.href = './home/home.html';  // Assuming home.html is in the same directory
+    window.location.href = './home/index.html';  // Assuming home.html is in the same directory
   } else {
     animationFrameCount++;
     requestAnimationFrame(animate);
