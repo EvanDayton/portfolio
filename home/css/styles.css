@@ -238,8 +238,7 @@ nav ul li .submenu {
   display: none;
   position: absolute;
   top: 0;
-  left: 100%;
-  margin-left: -1150px; /* Adjust this value to position the submenu to the left */
+  left: 150px;
   background-color: #fff; /* Adjust the background color as needed */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a box shadow */
   transition-duration: 1s; /* Adjust the transition time for the first link */
