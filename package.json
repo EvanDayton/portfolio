@@ -5,6 +5,8 @@
     "three-dragcontrols": "^0.88.2"
   },
   "devDependencies": {
+    "imports-loader": "^5.0.0",
+    "raw-loader": "^4.0.2",
     "sass": "^1.69.5"
   }
 }
