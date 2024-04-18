@@ -1,5 +1,5 @@
 class Dot {
-    constructor(minSpeed = -5, maxSpeed = 11, maxSize = 700, minSize = 300) {
+    constructor(minSpeed = .03, maxSpeed = 1, maxSize = 600, minSize = 5) {
         this.Container = document.getElementById("main");
         this.El = document.createElement("div");
         this.El.className = "dot";
@@ -34,8 +34,8 @@ class Dot {
             Math.random() * (this.props.maxSize - this.props.minSize) +
             this.props.minSize;
 
-        const startPosX = Math.random() * (80 - 0) + 0;
-        const startPosY = Math.random() * (80 - 0) + 0;
+        const startPosX = Math.random() * (10 - 0) + 0;
+        const startPosY = Math.random() * (60 - 0) + 0;
 
         this.Dot.style.width = this.size + "px";
         this.Dot.style.height = this.size + "px";
@@ -53,7 +53,7 @@ class Dot {
     }
 
     moveFrame(dot) {
-        let frameTime = 800;
+        let frameTime = 200;
         let recursion;
     
         let moveTick = function () {
@@ -66,6 +66,7 @@ class Dot {
     
         let frame = setTimeout(moveTick, frameTime);
     }
+    
     
     removeIfOutside() {
         const boundingBox = this.Container.getBoundingClientRect();
@@ -123,7 +124,7 @@ class Dot {
 }
 
 let Dots = [];
-for (let i = 0; i < 150; i++) {
+for (let i = 0; i < 12; i++) {
     let newDot = new Dot();
     Dots.push(newDot);
 }
