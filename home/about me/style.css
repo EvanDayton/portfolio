@@ -1,0 +1,41 @@
+/* New styles for the headshot and text */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    margin-top: 3%;
+    position: relative; /* Ensure headshot z-index works */
+    z-index: 1; /* Ensure headshot z-index works */
+}
+
+.headshot {
+    width: 325px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between headshot and text */
+    z-index: 2; /* Ensure headshot is on top */
+    position: relative; /* Ensure headshot z-index works */
+}
+
+.text {
+    max-width: 50%; /* Limit text width */
+    vertical-align: center;
+}
+
+/* Adjustments to h1 styles */
+h1 {
+    font-size: 20px; /* Adjust size as needed */
+    line-height: 1.7; /* Adjust line height as needed */
+    text-align: justify; /* Justify text */
+    margin-bottom: 2%;
+    text-align: center; 
+}
+
+.logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 10;
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+    filter: invert(1); /* Invert the color */
+  }

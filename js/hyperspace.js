@@ -5,8 +5,8 @@ var SPEED = 5;
 var CYCLE = 40;
 var CURRENTSPEED = 10;
 var SPEEDCHANGE = 0;
-var animationFrameCount = 0;
-var animationFrameLimit = 430; // Adjust this value based on your preference
+var animationFrameCount = -60; // Start a few frames further
+var animationFrameLimit = 100; // Adjust this value based on your preference
 var orbPressed = false;
 var isHyperspaceAnimationComplete = false;
 
@@ -92,10 +92,9 @@ function animate() {
 document.addEventListener('click', () => {
   // Set the flag to indicate the orb is pressed
   orbPressed = true;
+  // Start the animation loop after the click
+  requestAnimationFrame(animate);
 });
 
 // Call initStars here so it only runs once
 initStars();
-
-// Start the animation loop
-requestAnimationFrame(animate);
