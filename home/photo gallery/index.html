@@ -27,26 +27,39 @@
             <script type="module">
                 // JavaScript to generate photo items
                 const photoGallery = document.getElementById('photoGallery');
-
+            
                 // Create an array with photo filenames from "photo1.jpg" to "photo32.jpg"
-                const photoFilenames = Array.from({ length: 32 }, (_, i) => `./gallery/photo${i + 1}.jpg`);
-
+                const photoFilenames = Array.from({ length: 66 }, (_, i) => `./gallery/photo${i + 1}.jpeg`);
+            
                 // Shuffle the array to randomize the order
                 shuffleArray(photoFilenames);
-
+            
                 // Iterate through the shuffled array to create photo elements
                 photoFilenames.forEach((filename, index) => {
                     const photoItem = document.createElement('div');
                     photoItem.classList.add('photo-item');
-
+            
                     const img = document.createElement('img');
                     img.src = filename;
                     img.alt = `Photo ${index + 1}`;
-
+                    img.loading = 'lazy'; // Lazy loading for images
+            
+                    // Check if the image is landscape (aspect ratio > 1)
+                    const aspectRatio = Math.random() * 2 + 0.5; // Random aspect ratio between 0.5 and 2
+                    if (aspectRatio > 1) {
+                        // Increase the size of landscape photos by 20%
+                        img.style.width = '130%';
+                        img.style.height = 'auto';
+            
+                        // Randomize the margin-top for landscape photos
+                        const randomMarginTop = Math.random() * 50 + 10; // Random margin-top between 10px and 60px
+                        photoItem.style.marginTop = `${randomMarginTop}px`;
+                    }
+            
                     photoItem.appendChild(img);
                     photoGallery.appendChild(photoItem);
                 });
-
+            
                 // Function to shuffle an array using the Fisher-Yates algorithm
                 function shuffleArray(array) {
                     for (let i = array.length - 1; i > 0; i--) {
