@@ -1,8 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
-<<<<<<< HEAD
-=======
 
->>>>>>> 9d48f8e4a3fe5265a80e7ea3ae53cf2433788b6c
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
