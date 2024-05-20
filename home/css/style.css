@@ -48,23 +48,23 @@ body {
 }
 
 .dot:nth-child(1n) {
-	background-color: rgb(240, 231, 207);
+	background-color:  	#3f6d4e;
 }
 
 .dot:nth-child(3n) {
-	background-color: rgb(0, 0, 0);
+	background-color: #8bd450;
 }
 
 .dot:nth-child(4n) {
-	background-color: rgb(244, 223, 200);
+	background-color: #1d1a2f;
 }
 
 .dot:nth-child(5n) {
-	background-color: rgb(110, 93, 75);
+	background-color: #965fd4;
 }
 
 .dot:nth-child(6n) {
-	background-color: rgb(250, 246, 240);
+	background-color: #734f9a;
 }
 
 .frame {

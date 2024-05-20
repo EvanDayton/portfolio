@@ -9,8 +9,8 @@ class Dot {
             maxSpeed: maxSpeed,
             maxSize: maxSize,
             minSize: minSize,
-            inColor: "#802020",
-            outColor: "#b02020"
+            inColor: "#965fd4",
+            outColor: "#8bd450"
         };
 
         this.anim = true;
@@ -80,7 +80,6 @@ class Dot {
         ) {
             // If the dot is outside the bounding box, remove it
             this.Container.removeChild(this.Dot);
-            // Optional: Create a new dot to replace the removed one
             let newDot = new Dot();
             Dots.push(newDot);
         }

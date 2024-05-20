@@ -1,0 +1,27 @@
+# Node modules
+/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+dist/
+
+# System files
+.DS_Store
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Log files
+*.log
+
+# Optional: Exclude specific config files that may contain sensitive information
+# config.js
+
+# Optional: If you're using a cache folder for your build tools
+.cache/
+.vite/

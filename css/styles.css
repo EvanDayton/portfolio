@@ -14,6 +14,16 @@ body {
     top: 30px;
 }
 
+.title {
+    z-index: 10;
+    width: 350px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+    position: absolute;
+    left: 30px;
+    top: 90px;
+}
+
 .scene-container {
     height: 100%;
     width: 100%;

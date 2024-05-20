@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three/build/three.module.js"
-            }
-        }
-    </script>
+
+  <head>
     <meta charset="UTF-8">
     <title>LANDING PAGE</title>
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+
+  </head>
+
+  <body>
     <div id="scene-container"></div>
     <img src="img/curse.png" alt="Logo" class="logo">
+    <img src="img/title.png" alt="Title" class="title">
     <canvas id="hyperspaceCanvas" style="display: none;"></canvas>
     <div class="loading-pulse"></div>
-    <script type="module" src="js/room.js"></script>
-    <script src="js/hyperspace.js"></script>
-</body>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/hyperspace.js"></script>
+  </body>
+
 </html>
