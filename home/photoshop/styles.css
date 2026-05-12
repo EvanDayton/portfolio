@@ -199,6 +199,12 @@ nav ul li a {
   filter: invert(1); /* Invert the color */
 }
 
+.logo:hover {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: invert(1) !important;
+}
+
 .bottom-right-text {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
@@ -302,8 +308,14 @@ nav ul li:hover .submenu a:nth-child(3) {
   filter: none !important;
   position: relative;
   z-index: 11;
-  max-width: 60%; /* Adjust the maximum width of the image */
+  max-width: 60%;
   margin-left: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 

@@ -127,3 +127,22 @@ for (let i = 0; i < 12; i++) {
     let newDot = new Dot();
     Dots.push(newDot);
 }
+
+// Submenu hover functionality
+const submenuItems = document.querySelectorAll('.has-submenu');
+
+submenuItems.forEach(item => {
+    const submenu = item.querySelector('.submenu');
+    
+    item.addEventListener('mouseenter', () => {
+        if (submenu) {
+            submenu.classList.add('active');
+        }
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        if (submenu) {
+            submenu.classList.remove('active');
+        }
+    });
+});

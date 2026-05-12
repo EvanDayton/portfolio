@@ -27,26 +27,49 @@
             <script type="module">
                 // JavaScript to generate photo items
                 const photoGallery = document.getElementById('photoGallery');
-        
-                // Create an array with photo filenames from "photo1.jpg" to "photo32.jpg"
-                const photoFilenames = Array.from({ length: 19 }, (_, i) => `./gallery/photo${i + 1}.jpg`);
-        
+
+                // Create an array with photo filenames matching actual files
+                const photoFilenames = [
+                    './gallery/photo1.jpg',
+                    './gallery/photo2.jpg',
+                    './gallery/photo3.JPG',
+                    './gallery/photo4.JPG',
+                    './gallery/photo5.JPG',
+                    './gallery/photo6.JPG',
+                    './gallery/photo7.JPG',
+                    './gallery/photo8.JPG',
+                    './gallery/photo9.jpg',
+                    './gallery/photo10.JPG',
+                    './gallery/photo11.JPG',
+                    './gallery/photo12.JPG',
+                    './gallery/photo13.jpg',
+                    './gallery/photo14.jpg',
+                    './gallery/photo15.JPG',
+                    './gallery/photo16.JPG',
+                    './gallery/photo17.JPG',
+                    './gallery/photo18.JPG',
+                    './gallery/photo19.JPG'
+                ];
+
                 // Shuffle the array to randomize the order
                 shuffleArray(photoFilenames);
-        
+
                 // Iterate through the shuffled array to create photo elements
                 photoFilenames.forEach((filename, index) => {
                     const photoItem = document.createElement('div');
                     photoItem.classList.add('photo-item');
-        
+
                     const img = document.createElement('img');
                     img.src = filename;
                     img.alt = `photo ${index + 1}`;
-        
+                    img.onerror = function() {
+                        this.style.display = 'none';
+                    };
+
                     photoItem.appendChild(img);
                     photoGallery.appendChild(photoItem);
                 });
-        
+
                 // Function to shuffle an array using the Fisher-Yates algorithm
                 function shuffleArray(array) {
                     for (let i = array.length - 1; i > 0; i--) {

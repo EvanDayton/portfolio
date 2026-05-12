@@ -8,12 +8,20 @@
     z-index: 1; /* Ensure headshot z-index works */
 }
 
+.headshot-container {
+    padding: 10px;
+    position: relative;
+    z-index: 100;
+    isolation: isolate;
+    background-color: #000;
+}
+
 .headshot {
     width: 325px; /* Adjust size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Space between headshot and text */
-    z-index: 2; /* Ensure headshot is on top */
-    position: relative; /* Ensure headshot z-index works */
+    display: block;
+    position: relative;
+    z-index: 101;
 }
 
 .text {
@@ -38,4 +46,10 @@ h1 {
     height: 40px; /* Adjust as needed */
     margin-right: 10px; /* Adjust as needed */
     filter: invert(1); /* Invert the color */
-  }
+}
+
+.logo:hover {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: invert(1) !important;
+}

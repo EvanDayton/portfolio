@@ -28,8 +28,41 @@
                 // JavaScript to generate photo items
                 const photoGallery = document.getElementById('photoGallery');
 
-                // Create an array with photo filenames from "photo1.jpg" to "photo32.jpg"
-                const photoFilenames = Array.from({ length: 32 }, (_, i) => `./gallery/photo${i + 1}.jpg`);
+                // Create an array with photo filenames matching actual files
+                const photoFilenames = [
+                    './gallery/photo1.jpg',
+                    './gallery/photo2.jpg',
+                    './gallery/photo3.jpg',
+                    './gallery/photo4.jpg',
+                    './gallery/photo5.jpg',
+                    './gallery/photo6.jpg',
+                    './gallery/photo7.jpg',
+                    './gallery/photo8.jpg',
+                    './gallery/photo9.JPG',
+                    './gallery/photo10.jpg',
+                    './gallery/photo11.jpg',
+                    './gallery/photo12.jpg',
+                    './gallery/photo13.JPG',
+                    './gallery/photo14.JPG',
+                    './gallery/photo15.jpg',
+                    './gallery/photo16.JPG',
+                    './gallery/photo17.jpg',
+                    './gallery/photo18.JPG',
+                    './gallery/photo19.JPG',
+                    './gallery/photo20.jpg',
+                    './gallery/photo21.JPG',
+                    './gallery/photo22.jpg',
+                    './gallery/photo23.jpg',
+                    './gallery/photo24.jpg',
+                    './gallery/photo25.jpg',
+                    './gallery/photo26.JPG',
+                    './gallery/photo27.jpg',
+                    './gallery/photo28.JPG',
+                    './gallery/photo29.jpg',
+                    './gallery/photo30.jpg',
+                    './gallery/photo31.jpg',
+                    './gallery/photo32.JPG'
+                ];
 
                 // Shuffle the array to randomize the order
                 shuffleArray(photoFilenames);
@@ -42,6 +75,9 @@
                     const img = document.createElement('img');
                     img.src = filename;
                     img.alt = `Photo ${index + 1}`;
+                    img.onerror = function() {
+                        this.style.display = 'none';
+                    };
 
                     photoItem.appendChild(img);
                     photoGallery.appendChild(photoItem);

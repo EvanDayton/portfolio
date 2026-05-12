@@ -16,6 +16,13 @@ let outlinePass; // Declare outlinePass globally
 let selectedObjects = []; // Declare selectedObjects globally
 window.addEventListener("wheel", handleScroll);
 
+// Scroll indicator elements
+const scrollIndicator = document.getElementById('scroll-indicator');
+const pressEnter = document.getElementById('press-enter');
+const vignette = document.getElementById('vignette');
+const logo = document.querySelector('.logo');
+const title = document.querySelector('.title');
+
 // Set up the scene
 const scene = new THREE.Scene();
 
@@ -27,7 +34,7 @@ function animate() {
 
   if (mixer) {
     // Only use mixer if it's defined
-    const deltaTime = 0.01;
+    const deltaTime = 0.0025;
     mixer.update(deltaTime);
   }
 
@@ -84,6 +91,19 @@ loader.load("./objects/scene.gltf", (gltf) => {
     scrollAmount += e.deltaY;
     scrollAmount = Math.max(0, Math.min(scrollAmount, maxScrollAmount));
 
+    // Update scroll indicators - mutually exclusive
+    if (scrollAmount < 15) {
+      // At start (scrolled up) - hide scroll indicator, show press to enter
+      scrollIndicator.classList.add('hidden');
+      pressEnter.classList.add('visible');
+      vignette.classList.add('focused');
+    } else {
+      // At end or middle - show scroll indicator, hide press to enter
+      scrollIndicator.classList.remove('hidden');
+      pressEnter.classList.remove('visible');
+      vignette.classList.remove('focused');
+    }
+
     const targetCameraPositionZ =
       minCameraDistance +
       (maxCameraDistance - minCameraDistance) *
@@ -98,7 +118,7 @@ loader.load("./objects/scene.gltf", (gltf) => {
     requestAnimationFrame(animate);
 
     // Update the animation mixer for the main model
-    const deltaTime = 0.01; // You can adjust this value for the animation speed
+    const deltaTime = 0.0025; // You can adjust this value for the animation speed
     mixer.update(deltaTime);
 
     renderer.render(scene, camera);
@@ -137,7 +157,7 @@ loader.load("./objects/evangelion.glb", (gltf) => {
   scene.add(parentObject);
 
   // Set up rotation variables for the parent object (horizontal rotation only)
-  const rotationSpeed = 0.01; // You can adjust this value for rotation speed
+  const rotationSpeed = 0.003; // You can adjust this value for rotation speed
 
   // Animation loop for the parent object
   function animateFloatingObject() {
@@ -200,7 +220,7 @@ loader.load("./objects/orblightning.glb", (gltf) => {
       requestAnimationFrame(animateOrb);
 
       // Update the animation mixer for the "orb" model
-      const deltaTime = 0.01; // You can adjust this value for the animation speed
+      const deltaTime = 0.003; // You can adjust this value for the animation speed
       orbMixer.update(deltaTime);
 
       // Use the orbRaycaster here for raycasting
@@ -268,6 +288,13 @@ function handleOrbClick(event) {
 
   if (intersects.length > 0) {
     // Mouse is hovering over the orb
+    // Hide the press to enter indicator
+    pressEnter.classList.remove('visible');
+    // Hide the logo and title
+    logo.style.display = 'none';
+    title.style.display = 'none';
+    scrollIndicator.style.display = 'none';
+    
     // Teleport the camera to a specific position
     camera.position.set(0, 30, 8); // Teleport the camera
     camera.lookAt(0, 30, 5); // Adjust the camera's lookAt as needed
