@@ -1,7 +1,11 @@
 /* ── Pricing page: fixed overlay above the mix-blend-mode frame ── */
 .pricing-page {
     position: fixed;
-    z-index: 12;
+    z-index: 100;
+    top: var(--pad);
+    right: var(--pad);
+    bottom: var(--pad);
+    left: var(--pad);
     inset: var(--pad);
     overflow-y: auto;
     overflow-x: hidden;
