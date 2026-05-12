@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/script.js"></script>
+    <title>Pricing & Services</title>
+</head>
+<body>
+    <div id="Frame" class="frame">
+        <div class="frame_line frame_line-left"></div>
+        <div class="frame_line frame_line-right"></div>
+        <div class="frame_line frame_line-top"></div>
+        <div class="frame_line frame_line-bottom"></div>
+        <a href="../index.html">
+            <img src="../curse.png" alt="Logo" class="logo">
+        </a>
+    </div>
+
+    <!-- Pricing content lives OUTSIDE the frame so mix-blend-mode doesn't bleed through cards -->
+    <div class="pricing-page">
+
+        <div class="pg-header">
+            <span class="pg-title">Pricing &amp; Services</span>
+            <span class="pg-sub">Custom-built websites — no templates, no shortcuts.</span>
+        </div>
+
+        <!-- ── Tier Cards ── -->
+        <div class="section-wrap" id="pricingView">
+            <div class="tiers-grid">
+
+                <div class="tier-card">
+                    <div class="tier-name">Basic</div>
+                    <div class="tier-price-row"><span class="tier-dollar">$</span><span class="tier-amount">750</span></div>
+                    <div class="tier-tagline">Perfect starting point for any local business.</div>
+                    <ul class="tier-list">
+                        <li>5 pages built from scratch — your brand colors, fonts &amp; logo throughout</li>
+                        <li>Works on all devices · Contact form to your inbox · Google Maps integration</li>
+                        <li>Basic SEO setup · Free mockup before you pay a single dollar</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-name">Standard</div>
+                    <div class="tier-price-row"><span class="tier-dollar">$</span><span class="tier-amount">1,400</span></div>
+                    <div class="tier-tagline">More pages, live feeds, and visitor analytics.</div>
+                    <ul class="tier-list">
+                        <li>Everything in Basic · Up to 8 pages</li>
+                        <li>Live Instagram &amp; Facebook feed · Photo gallery or before/after showcase</li>
+                        <li>Testimonial section · Pop-up contact form on every page</li>
+                        <li>Google Analytics · Speed optimized for slow connections</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card tier-featured">
+                    <div class="badge-popular">Most Popular</div>
+                    <div class="tier-name">Business</div>
+                    <div class="tier-price-row"><span class="tier-dollar">$</span><span class="tier-amount">2,200</span></div>
+                    <div class="tier-tagline">Customer accounts, job requests, and your own dashboard.</div>
+                    <ul class="tier-list">
+                        <li>Everything in Standard · Up to 12 pages</li>
+                        <li>Customer login &amp; accounts · Job request form with photo uploads</li>
+                        <li>Instant email alerts on new requests · Owner dashboard from your phone</li>
+                        <li>Auto confirmation emails · Database hosting: 1st year free, $25/mo after</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card tier-premium">
+                    <div class="tier-name">Premium</div>
+                    <div class="tier-price-row"><span class="tier-dollar">$</span><span class="tier-amount">3,500</span></div>
+                    <div class="tier-tagline">Full booking system, payment links, and priority support.</div>
+                    <ul class="tier-list">
+                        <li>Everything in Business · Up to 20 pages</li>
+                        <li>Full booking — pick date &amp; time, confirm or reschedule · Live service menu</li>
+                        <li>Auto appointment reminders · Full customer history — jobs, requests &amp; invoices</li>
+                        <li>Payment links after job completion · Priority support + 60 days of edits</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="section-footer">
+                <button class="toggle-btn" id="showAddons">Print Add-Ons &nbsp;→</button>
+            </div>
+        </div>
+
+        <!-- ── Add-Ons ── -->
+        <div class="section-wrap hidden" id="addonsView">
+            <p class="addons-intro">Same colors, same fonts, same logo as your website — with QR codes that take customers straight to your site. Designed, printed, and shipped directly to you.</p>
+
+            <div class="addons-grid">
+
+                <div class="addon-card">
+                    <div class="addon-title">Business Cards</div>
+                    <div class="addon-desc">Standard size &middot; Double sided &middot; Premium gloss finish</div>
+                    <ul class="addon-list">
+                        <li><span class="addon-qty">100 cards</span><span class="addon-val">$65</span></li>
+                        <li><span class="addon-qty">250 cards</span><span class="addon-val">$110</span></li>
+                        <li><span class="addon-qty">500 cards</span><span class="addon-val">$175</span></li>
+                    </ul>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-title">Flyers</div>
+                    <div class="addon-desc">8.5×11 landscape &middot; Full color &middot; Double sided &middot; Thick gloss stock</div>
+                    <ul class="addon-list">
+                        <li><span class="addon-qty">50 flyers</span><span class="addon-val">$95</span></li>
+                        <li><span class="addon-qty">100 flyers</span><span class="addon-val">$160</span></li>
+                        <li><span class="addon-qty">250 flyers</span><span class="addon-val">$250</span></li>
+                    </ul>
+                </div>
+
+                <div class="addon-card addon-bundle">
+                    <div class="badge-bundle">Best Value</div>
+                    <div class="addon-title">Cards + Flyers Bundle</div>
+                    <div class="addon-desc">Save when you order both — ships together</div>
+                    <ul class="addon-list">
+                        <li><span class="addon-qty">100 cards + 50 flyers</span><span class="addon-val">$140</span></li>
+                        <li><span class="addon-qty">250 cards + 100 flyers</span><span class="addon-val">$240</span></li>
+                        <li><span class="addon-qty">500 cards + 250 flyers</span><span class="addon-val">$390</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="section-footer">
+                <button class="toggle-btn" id="showPricing">← &nbsp;Back to Plans</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="grain">
+        <div id="main">
+            <svg>
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="name"/>
+                        <feColorMatrix in="name" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -30" result="b"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        const pricingView = document.getElementById('pricingView');
+        const addonsView  = document.getElementById('addonsView');
+
+        document.getElementById('showAddons').addEventListener('click', () => {
+            pricingView.classList.add('fade-out');
+            setTimeout(() => {
+                pricingView.classList.add('hidden');
+                pricingView.classList.remove('fade-out');
+                addonsView.classList.remove('hidden');
+                addonsView.classList.add('fade-in');
+                setTimeout(() => addonsView.classList.remove('fade-in'), 450);
+            }, 350);
+        });
+
+        document.getElementById('showPricing').addEventListener('click', () => {
+            addonsView.classList.add('fade-out');
+            setTimeout(() => {
+                addonsView.classList.add('hidden');
+                addonsView.classList.remove('fade-out');
+                pricingView.classList.remove('hidden');
+                pricingView.classList.add('fade-in');
+                setTimeout(() => pricingView.classList.remove('fade-in'), 450);
+            }, 350);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+/* ── Pricing page: fixed overlay above the mix-blend-mode frame ── */
+.pricing-page {
+    position: fixed;
+    z-index: 12;
+    inset: var(--pad);
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 32px 32px;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139,212,80,.3) transparent;
+    pointer-events: none;
+}
+.pricing-page::-webkit-scrollbar { width: 4px; }
+.pricing-page::-webkit-scrollbar-thumb { background: rgba(139,212,80,.3); border-radius: 4px; }
+
+/* Allow interaction on actual content */
+.pricing-page > *,
+.pricing-page .section-wrap,
+.pricing-page .tiers-grid,
+.pricing-page .addons-grid { pointer-events: auto; }
+
+/* ── Page header ── */
+.pg-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0 14px;
+    gap: 5px;
+    /* sits below the logo (~60px tall at top-left, header is centered so fine) */
+    margin-top: 48px;
+}
+.pg-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: .4px;
+}
+.pg-sub {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ── Section wrapper ── */
+.section-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── 4-column tier grid ── */
+.tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ── Tier card — solid background so blobs don't bleed through ── */
+.tier-card {
+    display: flex;
+    flex-direction: column;
+    background: #1c1c1e;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    padding: 18px 16px;
+    transition: border-color .2s ease, transform .2s ease;
+}
+.tier-card:hover {
+    border-color: rgba(255,255,255,.22);
+    transform: translateY(-2px);
+}
+
+.tier-featured {
+    background: #172212;
+    border-color: rgba(139,212,80,.45);
+    position: relative;
+}
+.tier-featured:hover { border-color: rgba(139,212,80,.75); }
+
+.tier-premium {
+    background: #160e20;
+    border-color: rgba(150,95,212,.4);
+}
+.tier-premium:hover { border-color: rgba(150,95,212,.7); }
+
+/* ── Badges ── */
+.badge-popular, .badge-bundle {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    width: fit-content;
+    background: rgba(139,212,80,.18);
+    color: #8bd450;
+    border: 1px solid rgba(139,212,80,.35);
+}
+
+/* ── Tier name ── */
+.tier-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+/* ── Price row ── */
+.tier-price-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1px;
+    margin-bottom: 4px;
+    line-height: 1;
+}
+.tier-dollar {
+    font-size: 15px;
+    font-weight: 600;
+    color: #999;
+    margin-top: 5px;
+}
+.tier-amount {
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+/* ── Tagline ── */
+.tier-tagline {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.45;
+    min-height: 30px;
+}
+
+/* ── Feature list ── */
+.tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tier-list li {
+    font-size: 12px;
+    color: #bbb;
+    padding: 7px 0 7px 16px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    position: relative;
+    line-height: 1.45;
+}
+.tier-list li:last-child { border-bottom: none; }
+.tier-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #8bd450;
+    font-size: 10px;
+    font-weight: 700;
+    top: 8px;
+}
+
+/* ── CTA buttons (add-ons only) ── */
+.tier-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.07);
+    color: #fff !important;
+    transition: background .2s ease, border-color .2s ease;
+}
+.tier-btn:hover {
+    background: rgba(255,255,255,.13) !important;
+    border-color: rgba(255,255,255,.35) !important;
+    color: #fff !important;
+}
+.tier-btn-featured {
+    background: #8bd450 !important;
+    border-color: #8bd450 !important;
+    color: #000 !important;
+}
+.tier-btn-featured:hover {
+    background: #a3e068 !important;
+    border-color: #a3e068 !important;
+    color: #000 !important;
+}
+
+/* ── Toggle button ── */
+.section-footer {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+}
+.toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.18);
+    color: #999;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 9px 26px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+.toggle-btn:hover {
+    border-color: rgba(139,212,80,.55);
+    color: #8bd450;
+    background: rgba(139,212,80,.06);
+}
+
+/* ── Add-Ons ── */
+.addons-intro {
+    font-size: 12.5px;
+    color: #666;
+    line-height: 1.65;
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.addon-card {
+    display: flex;
+    flex-direction: column;
+    background: #1c1c1e;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    padding: 18px 16px;
+    gap: 10px;
+    transition: border-color .2s ease;
+}
+.addon-card:hover { border-color: rgba(255,255,255,.22); }
+
+.addon-bundle {
+    background: #172212;
+    border-color: rgba(139,212,80,.35);
+}
+.addon-bundle:hover { border-color: rgba(139,212,80,.65); }
+
+.addon-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+}
+.addon-desc {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.5;
+}
+.addon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+.addon-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    font-size: 12.5px;
+}
+.addon-list li:last-child { border-bottom: none; }
+.addon-qty { color: #bbb; }
+.addon-val { color: #8bd450; font-weight: 700; font-size: 13px; }
+
+/* ── Fade animations ── */
+.hidden { display: none !important; }
+
+@keyframes fadeIn  { from { opacity: 0; transform: translateY(8px);  } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeOut { from { opacity: 1; transform: translateY(0);     } to { opacity: 0; transform: translateY(-6px); } }
+
+.fade-in  { animation: fadeIn  .38s ease forwards; }
+.fade-out { animation: fadeOut .3s  ease forwards; }
+
+/* ── Responsive ── */
+@media (max-width: 1050px) {
+    .tiers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .tiers-grid, .addons-grid { grid-template-columns: 1fr; }
+    .pg-header { margin-top: 60px; }
+}

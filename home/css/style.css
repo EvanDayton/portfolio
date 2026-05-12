@@ -37,7 +37,7 @@ body {
 .dot {
 	position: fixed;
 	border-radius: 50%;
-	transition: all 0.8s linear;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	z-index: 1;
 }
 
@@ -45,6 +45,7 @@ body {
 .dot:active {
 	background-color: #000000 !important;
 	z-index: 999;
+	transform: scale(1.2);
 }
 
 .dot:nth-child(1n) {
@@ -75,6 +76,115 @@ body {
 	top: var(--pad);
 	bottom: var(--pad);
 	mix-blend-mode: difference;
+}
+
+.frame_content {
+  color: #fff;
+  background-color: #000;
+  mix-blend-mode: normal;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.2em; /* Adjust as needed */
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: #8bd450;
+  transform: translateX(8px);
+  background-color: rgba(139, 212, 80, 0.1);
+  padding: 8px 20px;
+}
+
+nav ul li.has-submenu {
+  position: relative;
+  width: fit-content;
+}
+
+nav ul li.has-submenu::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  width: 30px;
+  height: calc(100% + 20px);
+}
+
+nav ul li.has-submenu .submenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  left: calc(100% + 24px);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border-radius: 25px;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  clip-path: inset(0 100% 0 0 round 25px);
+  pointer-events: none;
+  transition: clip-path 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav ul li.has-submenu:hover .submenu,
+nav ul li.has-submenu .submenu.active {
+  clip-path: inset(0 0% 0 0 round 25px);
+  pointer-events: auto;
+}
+
+nav ul li.has-submenu .submenu a {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #fff !important;
+  border-radius: 12px;
+  background-color: transparent !important;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+nav ul li.has-submenu:hover .submenu a,
+nav ul li.has-submenu .submenu.active a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+nav ul li.has-submenu:hover .submenu a:nth-child(1),
+nav ul li.has-submenu .submenu.active a:nth-child(1) { transition-delay: 0.12s; }
+nav ul li.has-submenu:hover .submenu a:nth-child(2),
+nav ul li.has-submenu .submenu.active a:nth-child(2) { transition-delay: 0.22s; }
+nav ul li.has-submenu:hover .submenu a:nth-child(3),
+nav ul li.has-submenu .submenu.active a:nth-child(3) { transition-delay: 0.32s; }
+nav ul li.has-submenu:hover .submenu a:nth-child(4),
+nav ul li.has-submenu .submenu.active a:nth-child(4) { transition-delay: 0.42s; }
+nav ul li.has-submenu:hover .submenu a:nth-child(5),
+nav ul li.has-submenu .submenu.active a:nth-child(5) { transition-delay: 0.52s; }
+
+nav ul li.has-submenu .submenu a:hover {
+  background-color: rgba(139, 212, 80, 0.15) !important;
+  color: #8bd450 !important;
+}
+
+/* Remove hover effects from logo */
+.logo {
+  pointer-events: auto;
+}
+
+.logo:hover {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: invert(1) !important;
 }
 
 .frame_line {
